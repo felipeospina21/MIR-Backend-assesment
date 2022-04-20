@@ -21,6 +21,7 @@ async function getAllFavsLists(req, res) {
 
 async function getFavsListById(req, res) {
   const { id } = req.params;
+
   try {
     const favsList = await FavsList.findById(id);
     res.status(200).json(favsList);

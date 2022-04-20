@@ -7,7 +7,7 @@ async function createUser(req, res) {
   const { email, password } = req.body;
 
   try {
-    const newUser = User.create({ email, password });
+    const newUser = await User.create({ email, password });
     res.status(200).json(newUser);
   } catch (error) {
     res.status(400).json({ error });
